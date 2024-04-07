@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <form action="/update/{{data[0]}}" method="POST" >
+        <input type="text" name="nom" placeholder="Enter your Name..." value="{{data[1]}} "/>
+        <input type="text" name="facultee" placeholder="Enter your faculty..." value="{{data[2]}}"/>
+        <input type="date" name="Agee" placeholder="Enter your born date..." value="{{data[3]}}"/>
+        <input type="text" name="adressee" placeholder="Enter your adress..." value="{{data[4]}}"/>
+        <input type="submit" value="Update" />
+    </form>
+</body>
+</html>

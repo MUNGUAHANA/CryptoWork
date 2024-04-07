@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of students</title>
+</head>
+<body>
+    <h1>This is the list of students from this site</h1>
+    <div class="tableStud">
+        <table border="1"  style="border-collapse:collapse;">
+            <tr>
+                <td>Noms</td><td>Faculté</td><td>Age</td><td>Adresse</td><td>Quelle Actions</td>
+            </tr>
+            <tbody>
+                {%for i in donnees%}
+                <tr>
+                    <td> {{i['nom']}} </td>
+                    <td> {{i['faculte']}} </td>
+                    <td> {{i['Age']}} </td>
+                    <td> {{i['adresse']}} </td>
+                    <td>      
+                    <a href="/delete/ {{i['nom']}} "  style="color: red">Delete <a/>
+                    <a href="/update/ {{i['nom']}} "  style="color: rgb(45, 10, 241);">Update <a/>
+                </td>
+                </tr>
+                {%endfor%}  
+            </tbody>
+                 
+        </table>
+    </div>
+</body>
+</html>

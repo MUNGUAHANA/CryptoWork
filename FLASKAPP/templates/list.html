@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list students</title>
+</head>
+<body  style="background-color:black">
+    <h1 style="color:aliceblue; text-align:center;" class="welcome"> Informations about students</h1>
+    <table  class="d-flex justify-content-center"  border="0.5"  style="border-collapse:collapse; width:700px; margin:20px;
+    background-color: rgb(77, 72, 72);border:1px solid; padding:5px; tetx-align:center; color:white;
+    width:600px; height:200px; place-item:center; position: absolute; left:50px; right: 50px;
+    transform: translate(45%,35%);">
+        <tr style="border: 1px solid; padding: 5px; text-align:center; color:white;
+        ">
+        <td style="font-size:16px; font:bold; color: gray;">Matricule</td>
+        <td  style="font-size:16px; font:bold; color: gray;">Noms</td>
+        <td  style="font-size:16px; font:bold; color: gray;">Faculté</td>
+        <td  style="font-size:16px; font:bold; color: gray;">Age</td>
+        <td  style="font-size:16px; font:bold; color: gray;">Adresse</td>
+        <td  style="font-size:16px; font:bold; color: gray;">Quelle Actions</td>
+            
+        </tr>
+        <tbody>
+            {%for i in data%}
+            <!--<h5 style="color:yellow"> {{i.0}} </h5>  -->
+
+            <tr>
+                <td> {{i.0}} </td>
+                <td  style="background-color:black"> {{i.1}} </td>
+                <td> {{i.2}} </td>
+                <td style="background-color:black"> {{i.3}} </td>
+                <td> {{i.4}} </td>
+                <td  style="background-color:black">      
+                
+                <a style="padding: 8px auto; margin:auto; font-size:16px; border-radius:5px;
+                background-color:red; color:black; " href= "/delete/{{i.0}} "  style="color: red">Delete <a/>
+                
+                <a style="padding: 8px auto; margin:auto; font-size:16px; border-radius:5px;
+                background-color:green; color:black; " href= "/data_call/ {{i.0}} "  style="color: rgb(45, 10, 241);">Update <a/>
+            </td>
+            </tr>
+            {%endfor%}  
+
+        </tbody>
+             
+    </table>
+</body>
+</html>

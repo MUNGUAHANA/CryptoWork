@@ -1,0 +1,174 @@
+:root{
+--maincolor: rgb(88, 199, 195);
+--icon: rgb(119, 119, 119);
+--bordersent: rgb(11, 95, 145);
+--textcol: #fff;
+}
+.green{
+    background-color: rgb(9, 92, 89);
+color: var(--textcol);
+}
+
+.body{
+    background-color: var(--maincolor);
+    height: 100vh;
+    display: flex;
+    
+    align-content: space-between;
+}
+.body .right{
+    margin-right: auto;
+    align-items: flex-start;
+    float: left;
+    height: auto;
+    width: 50%;
+    padding-top: 3rem;
+    padding-left: 5rem;
+}
+.body .right .doc{
+    background: url(images/doc.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: 100%;
+
+}
+.body .champ{
+    padding : 5rem 4%;
+    padding-right: 4;
+    padding-right: 10%;
+    margin-left: auto;
+    align-items: flex-end;
+    float: right;
+    width: 50%;
+    display: block;
+}
+.body .champ .logo{
+    width: 16rem;
+    height: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.body .champ .logo .img{
+    width: auto;
+    height: 6rem;
+    background: url(images/logowhite.png)no-repeat;
+    background-size: cover;
+}
+.body .champ .login{
+    text-align: center;
+color: var(--textcol);
+    color: var(--textcol);
+    margin-bottom: 2rem;
+}
+.body .champ .input{
+    display: block;
+}
+.body .champ .input input{
+    width: 100%;
+    margin-bottom: 1.3rem;
+}
+.body .champ{
+    text-align: center;
+}
+svg{
+    width: 5%;
+    height: 5%;
+}
+
+@media (max-width:992px){
+    .body .right{
+        display: none;
+    }
+    .body .champ{
+        width: 100%;
+        padding: 6rem 16%;
+    }
+}
+@media (max-width:1150px){
+    .body .right{
+
+        padding-left: 2rem;
+    }
+}
+@media (max-width:1100px){
+    .body .right{
+
+        padding-left: 1rem;
+    }
+}
+/*
+@media (max-width:1150px){
+    .body .right{
+        padding-left: 0;
+        width: 45%;
+    }
+    .body .right .doc{
+        background-position: right;
+        width: 90%;
+    
+    }
+    .body .champ{
+        width: 60%;
+        padding-right: 12%;
+    }
+}
+*/
+
+/*=====================================================================================================*/
+/*                              Home page                                 */
+/*=====================================================================================================*/
+
+.formes{
+    margin-bottom: 1.3rem;
+    padding-right: 4;
+    padding-right: 10%;
+    margin-left: auto;
+    align-items: flex-end;
+    float: right;
+    padding : 0.5rem 4%;
+    margin: auto;
+    width: 50%;
+    display:grid ;
+ }
+ .TITRE{
+     color: #fff;
+ }
+ .sheet{
+    text-align: center;
+    color: var(--textcol);
+    color: var(--textcol);
+    margin-bottom: 2rem;
+}
+.sympt .formes input{
+    width: 100%;
+    margin-bottom: 1.3rem;
+}
+.sympt .formes  select{
+    width: 100%;
+    margin-bottom: 1.3rem;
+}
+.para{
+    padding: 12px;
+   padding-bottom: 0.5%;
+    margin-bottom: 9.3rem;
+}
+.body .formes{
+    text-align: center;
+}
+.Bdy_symp{
+    background: url(images/mainOne.png)no-repeat;
+    background-color: rgb(17, 8, 8);
+    height: 100vh;
+}
+.para{
+    height: 150%;
+}
+.home .sidebar{
+    display: block;
+    width: 5rem;
+    height: 100%;
+    background-color: var(--maincolor);
+}

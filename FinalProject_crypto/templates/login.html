@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <link rel="manifest" href="manifest.json">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/tq.js"></script>
+        <link rel="stylesheet" href=" style.css">
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+        <link rel="stylesheet" href="/style/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="style/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/tailwind/public/output.css">
+        <title>CHS | Login</title>
+        <link rel="icon" type="image/x-icon" href="/static/Code/image/mainTrue.png">
+    </head>
+    
+    <body>
+        
+        <div classe="text-center border-b text-md text-white" style="width:100%;color:white;text-align:center" id="message"></div>        
+        <section class="body">
+            <div class="right">
+                <div class="doc">
+                </div>
+            </div>
+            <div class="champ">
+                <div class="logo"><div class="img"></div></div>
+                <h2 class="login">Login</h2>
+                <div class="input">
+                    <form action="/symptoms" method="post" method="post" id="form" action="" method="POST">
+                        <input type="text" class="form-control" name="name" id="" placeholder="Username" required>
+                        <input type="password" class="form-control" name="password"  id="" placeholder="password" required>
+                        <button id="btn" class="w-50 mt-2 btn bg-black btn-success " type="submit">Valider</button>
+                        <svg id="waiting" class="w-6 h-6 text-center animate-spin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4.755 10.059a7.5 7.5 0 0112.548-3.364l1.903 1.903h-3.183a.75.75 0 100 1.5h4.992a.75.75 0 00.75-.75V4.356a.75.75 0 00-1.5 0v3.18l-1.9-1.9A9 9 0 003.306 9.67a.75.75 0 101.45.388zm15.408 3.352a.75.75 0 00-.919.53 7.5 7.5 0 01-12.548 3.364l-1.902-1.903h3.183a.75.75 0 000-1.5H2.984a.75.75 0 00-.75.75v4.992a.75.75 0 001.5 0v-3.18l1.9 1.9a9 9 0 0015.059-4.035.75.75 0 00-.53-.918z" clip-rule="evenodd" />
+                        </svg>  
+                        <br>
+                        <!-- <button onclick="goto('new_user')" class="bg-yellow-400">Nouveau compte</button>                   -->
+                    </form>                   
+                </div>
+            </div>
+
+        </section>
+        <script>
+            $("#waiting").hide()
+            $("#form").submit(function(e){
+                e.preventDefault();
+                $("#btn").hide()
+                $("#waiting").show()
+                $("#message").hide()
+                var formData = new FormData(this);
+                $.ajax({
+                    url: "",
+                    type: 'POST',
+                    data: formData,
+                    success: function (data) {
+                        const response=JSON.parse(data)
+                        $("#message").show()
+                        if(!response.state){
+                            $("#message").addClass("bg-red-500","border","rounded-full","px-5","text-white")
+                            $("#btn").show()
+                            $("#waiting").hide()
+                        }else{
+                            $("#message").addClass("bg-blue-500","border","rounded-full","px-5","text-white")                            
+                            window.location="/"
+                        }
+                        $("#message").text(response.message)                
+                    },error:function(data){
+                        $("#message").text(data.statusText)  
+                        $("#btn").show()
+                        $("#waiting").hide()
+                    },
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+            })
+        </script>
+       
+    </body>
+</html>

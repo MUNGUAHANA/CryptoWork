@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Save a student</title>
+</head>
+<body style="background-color:black">    
+        <h1 style="color:aliceblue; text-align:center;" class="welcome"> Welcome in STUSAVER</h1>
+        <form  action="/list" method="post" class="d-flex justify-content-center" 
+        style="margin:20px auto; display:grid; place-items: center; padding:100px; font-weight:bold;
+        border: 1px solid ;background-color:rgb(77, 72, 72); width:600px; height:250px;"
+       >
+            <input style="border:2px solid; border-radius:5px; background-color:black; color:white;" type="varchar" name="mat" placeholder="Enter your ID..."/>
+            <input  style="border:2px solid; border-radius:5px; background-color:black; color:white;" type="text" name="nom" placeholder="Enter your Name..."/>
+            <input  style="border:2px solid; border-radius:5px; background-color:black; color:white;" type="text" name="faculte" placeholder="Enter your faculty..."/>
+            <input  style="border:2px solid; border-radius:5px; background-color:black; color:white;" type="date" name="Age" placeholder="Enter your born date..."/>
+            <input  style="border:2px solid; border-radius:5px; background-color:black; color:white;" type="text" name="adresse" placeholder="Enter your adress..."/>
+            <input " style="padding: 10px 20px; margin:10px; font-size:16px; border-radius:5px;
+             background-color:green; color:beige; "  
+           type="submit" value="Save a New student" />
+            <form action"{{url_for('index')}}">
+            </form>
+                
+        </form> 
+</body>
+</html>
