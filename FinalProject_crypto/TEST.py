@@ -35,4 +35,3 @@ def api_dechiffrer():
 
 if __name__ == "__main__":
     app.run(debug=True)
-print(chiffrer("dqjfunuenjsip)ùijpojpserr"))
